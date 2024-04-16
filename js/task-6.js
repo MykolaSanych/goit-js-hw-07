@@ -11,14 +11,14 @@ const paternalElement = document.getElementById("boxes");
 let inputNumber;
 function createBoxes(amount) {
   let n = 0;
+  let newDiv = "";
   for (let i = 0; i < amount; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.style.width = `${30 + n}px`;
-    newDiv.style.height = `${30 + n}px`;
-    newDiv.style.backgroundColor = getRandomHexColor();
-    paternalElement.append(newDiv);
+    newDiv += `<div style="width: ${30 + n}px; height: ${
+      30 + n
+    }px; background-color: ${getRandomHexColor()};"></div>`;
     n += 10;
   }
+  paternalElement.insertAdjacentHTML("afterbegin", newDiv);
 }
 
 controlInput.addEventListener(

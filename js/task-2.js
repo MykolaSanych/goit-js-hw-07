@@ -25,15 +25,8 @@ const images = [
   },
 ];
 const gallery = document.querySelector(".gallery");
-let i = 0;
-images.forEach((index) => {
-  if (i < 3) {
-    const item = document.createElement("li");
-    gallery.append(item);
-    const img = document.createElement("img");
-    img.src = index.url;
-    img.alt = index.alt;
-    item.append(img);
-    i++;
-  }
+let stringList = "";
+images.forEach((img) => {
+  stringList += `<li><img src=${img.url} alt=${img.alt}/></li>`;
 });
+gallery.insertAdjacentHTML("afterbegin", stringList);

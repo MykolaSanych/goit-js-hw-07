@@ -17,6 +17,8 @@ body {
   list-style-type: none;
   align-items: center;
   justify-content: space-around;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
 .gallery > li > img {
   max-width: 360px;
